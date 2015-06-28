@@ -1,4 +1,26 @@
 
+###Installation
+
+Kaleidoscope++基于LLVM,  在Linux上，如果安装了llvm(3.6+)和clang(3.6+),可以直接编译
+
+		clang++ -g Kaleidoscope.cpp `llvm-config --cxxflags --ldflags --system-libs --libs core mcjit native` -O3 -o toy
+
+
+如果使用VC2013编译的LLVM，需要进行以下设置
+
+1. 需要使用llvm提供的cl.exe进行编译
+
+2. 包含目录和库目录中需要引入llvm的库目录和头文件目录
+
+3. clang不支持异常，需增加预处理定义_HAS_EXCEPTIONS=0
+
+4. 代码生成的运行库需要修改为多线程DLL
+
+5. 链接器的依赖项中增加llvm的lib文件
+
+6. 不同的目的机器类型设定Module文件的targettriple属性
+
+
 ###Kaleidoscope++的范式：
 
 1.  top范式表示所有输入
