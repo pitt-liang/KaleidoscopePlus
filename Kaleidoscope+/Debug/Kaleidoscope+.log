@@ -1,0 +1,40 @@
+﻿生成启动时间为 2015/6/28 22:25:53。
+     1>项目“E:\BaiduDisk\Code\Compiler\PGWT\Kaleidoscope+\Kaleidoscope+\Kaleidoscope+.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\LLVM\msbuild-bin\CL.exe /c /Z7 /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _HAS_EXCEPTIONS=0 /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt -m32 -fmsc-version=1800 Kaleidoscope+.cpp
+     1>clang-cl.exe : warning : argument unused during compilation: '/Gm'
+     1>clang-cl.exe : warning : argument unused during compilation: '/GS'
+     1>clang-cl.exe : warning : argument unused during compilation: '/fp:precise'
+     1>clang-cl.exe : warning : argument unused during compilation: '/FdDebug\vc120.pdb'
+     1>Kaleidoscope+.cpp(122,19): warning : using the result of an assignment as a condition without parentheses [-Wparentheses]
+                         while (cur_char = advance(input))
+                                ~~~~~~~~~^~~~~~~~~~~~~~~~
+         Kaleidoscope+.cpp(122,19) :  note: place parentheses around the assignment to silence this warning
+                         while (cur_char = advance(input))
+                                         ^
+                                (                        )
+         Kaleidoscope+.cpp(122,19) :  note: use '==' to turn this assignment into an equality comparison
+                         while (cur_char = advance(input))
+                                         ^
+                                         ==
+     1>Kaleidoscope+.cpp(541,62): warning : format specifies type 'int' but the argument has type 'llvm::Function *' [-Wformat]
+                                 fprintf(stderr, "find the position %d for function %s\n", find_func, name.c_str());
+                                                                    ~~                     ^~~~~~~~~
+     1>Kaleidoscope+.cpp(542,42): warning : format specifies type 'int' but the argument has type 'llvm::Module *' [-Wformat]
+                                 fprintf(stderr, "openModule is %d\n", openModule);
+                                                                ~~     ^~~~~~~~~~
+     1>Kaleidoscope+.cpp(543,46): warning : format specifies type 'int' but the argument has type 'value_type' (aka 'llvm::Module *') [-Wformat]
+                                 fprintf(stderr, "current Module is %d\n", (*from));
+                                                                    ~~     ^~~~~~~
+     1>Kaleidoscope+.cpp(74,27): warning : unused variable 'CurLoc' [-Wunused-variable]
+         static SourceCodeLocation CurLoc;
+                                   ^
+         5 warnings generated.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\BaiduDisk\Code\Compiler\PGWT\Kaleidoscope+\Debug\Kaleidoscope+.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib LLVMAnalysis.lib LLVMCore.lib LLVMExecutionEngine.lib LLVMInstCombine.lib LLVMMC.lib LLVMScalarOpts.lib LLVMSupport.lib LLVMTransformUtils.lib LLVMMCJIT.lib LLVMX86CodeGen.lib LLVMX86AsmPrinter.lib LLVMX86AsmParser.lib LLVMX86Desc.lib LLVMX86Info.lib LLVMX86Disassembler.lib LLVMRuntimeDyld.lib LLVMAsmPrinter.lib LLVMSelectionDAG.lib LLVMCodeGen.lib LLVMProfileData.lib LLVMipa.lib LLVMTarget.lib LLVMX86Utils.lib LLVMObject.lib LLVMBitReader.lib LLVMMCParser.lib LLVMMCDisassembler.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\BaiduDisk\Code\Compiler\PGWT\Kaleidoscope+\Debug\Kaleidoscope+.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\BaiduDisk\Code\Compiler\PGWT\Kaleidoscope+\Debug\Kaleidoscope+.lib" /MACHINE:X86 Debug\Kaleidoscope+.obj
+         Kaleidoscope+.vcxproj -> E:\BaiduDisk\Code\Compiler\PGWT\Kaleidoscope+\Debug\Kaleidoscope+.exe
+     1>已完成生成项目“E:\BaiduDisk\Code\Compiler\PGWT\Kaleidoscope+\Kaleidoscope+\Kaleidoscope+.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.78

@@ -1,0 +1,65 @@
+def fib(x) if x < 3 then 1 else fib(x-1)+ fib(x-2);
+f(10);
+
+def f(x) x +x;
+f(12);
+f(22);
+
+
+exit;
+
+
+
+Assertion failed: getOperand(0)->getType() == getOperand(1)->getType() && "Both operands to FCmp instruction are not of the same type!", file C:\LLVM\include\llvm/IR/Instructions.h, line 1189
+
+
+
+;definition of fib function
+define double @fib(double %x) {
+entry:
+  %x1 = alloca double
+  store double %x, double* %x1
+  %x2 = load double* %x1
+  %cmplesstmp = fcmp ult double %x2, 3.000000e+00
+  %booltmp = uitofp i1 %cmplesstmp to double
+  %ifcond = fcmp one double %booltmp, 0.000000e+00
+  br i1 %ifcond, label %then, label %else
+
+then:                                             ; preds = %entry
+  br label %ifcond7
+
+else:                                             ; preds = %entry
+  %x3 = load double* %x1
+  %subtmp = fsub double %x3, 1.000000e+00
+  %calltmp = call double @fib(double %subtmp)
+  %x4 = load double* %x1
+  %subtmp5 = fsub double %x4, 2.000000e+00
+  %calltmp6 = call double @fib(double %subtmp5)
+  %addtmp = fadd double %calltmp, %calltmp6
+  br label %ifcond7
+
+ifcond7:                                          ; preds = %else, %then
+  %iftmp = phi double [ 1.000000e+00, %then ], [ %addtmp, %else ]
+  ret double %iftmp
+}
+
+Read function definition:
+define double @f(double %x) {
+entry:
+  %cmptmp = fcmp ult double %x, 3.000000e+00
+  br i1 %cmptmp, label %ifcont, label %else
+
+else:                                             ; preds = %entry
+  %subtmp = fadd double %x, -1.000000e+00
+  %calltmp = call double @f(double %subtmp)
+  %subtmp5 = fadd double %x, -2.000000e+00
+  %calltmp6 = call double @f(double %subtmp5)
+  %addtmp = fadd double %calltmp, %calltmp6
+  br label %ifcont
+
+ifcont:                                           ; preds = %entry, %else
+  %iftmp = phi double [ %addtmp, %else ], [ 1.000000e+00, %entry ]
+  ret double %iftmp
+}
+
+
